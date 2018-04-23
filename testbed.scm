@@ -142,9 +142,11 @@
           newstate
           (run-cycles newstate (+ i 1) terminate)))))
 
+(define (train)
+  (run-cycles '(#f #f #f #f #f) 1 1000) ;; 1000, 300
+)
 ;; test a percent-correct measure
-(define (test)
-  (define cyclestate (run-cycles '(#f #f #f #f #f) 1 1000)) ;; 1000, 300
+(define (test cyclestate)
   (let loop ((i 0) (successes 0) (state cyclestate))
     (let* ((features (generate-features))
            (state (list (if (< i 100) features #f)

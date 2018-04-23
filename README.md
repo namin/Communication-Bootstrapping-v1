@@ -10,7 +10,7 @@ In Jake Beal's [PhD thesis (2007)](http://web.mit.edu/jakebeal/www/Publications/
 Runs in [Chez Scheme](https://cisco.github.io/ChezScheme/):
 ```scheme
 (load "main.scm")
-(test)
+(test (train))
 ```
 
 Warning: the code does not work (yet), as there is not a single success after training. :(
