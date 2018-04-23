@@ -85,6 +85,10 @@ pages 18 to 21 of Beal's master thesis
          - if `m_n` = 0
            - `m_n` := 1
            - `m_u` := {`j`|`C_j` != 0}
+       - else
+         - `m_n` := `m_n` + 1
+         - if `m_n` < `t_c`
+           - `m_u` := `m_u` /\ {`j` | `C_j` != 0}
          - if `t_c` <= `m_n` < `t_p`
            - `m_c` := `m_c` U `m_u`
            - `m_u` := empty set
