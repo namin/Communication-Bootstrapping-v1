@@ -116,7 +116,7 @@ pages 18 to 21 of Beal's master thesis
              - `y_v` := `random`
        - for all `y` in `T_i`
          - if exists `z` in (`T_i` - `y`) s.t |`z_v` - `y_v` | < r_i*2
-           - `T_i` := `T_i` - (random in {`y`,`z`})
+           - `T_i` := `T_i` - (`random` in {`y`,`z`})
 
 - `listen_out`(`F`)
    - Preconditions:
