@@ -67,7 +67,7 @@
 ;; Two cases to handle:
 ;; 1. Features in internal-map
 ;;    If asserted on feature-lines: modify internal-map for conflicts
-;;    else: if enough matches, addert on feature-lines
+;;    else: if enough matches, assert on feature-lines
 ;; 2. Features asserted, but not in internal-map
 ;;    add new features to internal-map
 ;; Returns (cons internal-map feature-lines)
