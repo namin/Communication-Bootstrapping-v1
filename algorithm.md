@@ -119,3 +119,9 @@ pages 18 to 21 of Beal's master thesis
            - `T_i` := `T_i` - (random in {`y`,`z`})
 
 - `listen_out`(`F`)
+   - Preconditions:
+     - F = f
+     - listening = true
+   - Effect:
+     - listening := false
+     - f := empty set
