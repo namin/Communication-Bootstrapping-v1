@@ -56,6 +56,18 @@ pages 18 to 21 of Beal's master thesis
 ### Transitions:
 
 - `talk_in`(`F`)
+   - Effect:
+     - `talking` := `true`
+     - for all (`s`,`i`) in `F`
+       - if not exists `x` in `T_s` s.t. `x_s` = `s`
+         - `T_s := `T_s` U (`i`,`random`)
+       - if not exists `y` in `T_i` s.t. `y_i` = `i`
+         - `T_i := `T_i` U (`i`,`random`)
+       - let
+         - `x` in `T_s` s.t. `x_s` = `s`
+         - `y` in `T_i` s.t. `y_i` = `i`
+         - `v_l` in {1,-1}, for all `l` in `x_c` s.t. precisely |`x_c`|*`y_v` of the set {`v_l`} are 1
+         - for all `l` in `x_c`, `c` := `c` U (`l`, `v_l`)
 
 - `talk_out`(`C_i`)
 
