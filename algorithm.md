@@ -70,6 +70,12 @@ pages 18 to 21 of Beal's master thesis
          - for all `l` in `x_c`, `c` := `c` U (`l`, `v_l`)
 
 - `talk_out`(`C_i`)
+   - Preconditions:
+     - for all (`l`,`v`) in `c`, `C_l` = `v`
+     - for all `l` s.t. for all `v`, if (`l`,`v`) not in `c` then `C_l` = 0
+     - talking := true
+   - Effect:
+     - talking := false
 
 - `listen_in`(`C_i`,`F`,`first`)
 
