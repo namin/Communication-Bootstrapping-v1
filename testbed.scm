@@ -18,19 +18,19 @@
 ;; How big is it? 28 nouns, 7 verbs. avg 4 words/sentence.
 
 ;; Normal Set
-;; (define nouns '(bob jim mary icepick shovel table lab))
-;; (define verbs '(move approach retreat touch eat fear))
-;; (define noun-roles '(subject object instrument place))
+(define nouns '(bob jim mary icepick shovel table lab))
+(define verbs '(move approach retreat touch eat fear))
+(define noun-roles '(subject object instrument place))
 
 ;; Mega Set - 50 nouns, 20 verbs
-(define nouns '(bob jim mary icepick shovel table lab fred bill classroom
-                leg cup butterfly dog cat turtle door window car hammer
-                keyboard coffee danish pencil pen eraser wall socket book ed
-                wheel chainsaw gun kite bedroom shower beach shoe light dark
-                hat office house apple banana flea vampire stapler kim joe))
-(define verbs '(move approach retreat touch eat fear zap feel fly throw
-                catch push hit stab tickle hurt love hate want ignite))
-(define noun-roles '(subject object instrument place))
+;; (define nouns '(bob jim mary icepick shovel table lab fred bill classroom
+;;                 leg cup butterfly dog cat turtle door window car hammer
+;;                 keyboard coffee danish pencil pen eraser wall socket book ed
+;;                 wheel chainsaw gun kite bedroom shower beach shoe light dark
+;;                 hat office house apple banana flea vampire stapler kim joe))
+;; (define verbs '(move approach retreat touch eat fear zap feel fly throw
+;;                 catch push hit stab tickle hurt love hate want ignite))
+;; (define noun-roles '(subject object instrument place))
 
 (define (generate-features)
   (let loop ((nnoun (+ 2 (random 3)))
@@ -144,7 +144,7 @@
 
 ;; test a percent-correct measure
 (define (test)
-  (define cyclestate (run-cycles '(#f #f #f #f #f) 1 1000)) ;; 300
+  (define cyclestate (run-cycles '(#f #f #f #f #f) 1 1000)) ;; 1000, 300
   (let loop ((i 0) (successes 0) (state cyclestate))
     (let* ((features (generate-features))
            (state (list (if (< i 100) features #f)
