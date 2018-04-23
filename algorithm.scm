@@ -256,7 +256,7 @@
            (let* ((res (list-search-positive tmap
                          (lambda (x) (eq? (first ifeat) (first x)))))
                   ;; if no value in tmap, don't change the inflection value
-                  (uvalue (if res (second res) (second infl)))
+                  (uvalue (if (yes? res) (second res) (second infl)))
                   (dif (- uvalue (second infl))))
              (if (> dif (/ unary-percent-match 2))
                  (consp (list (first infl) uvalue) (loop (cdr tnmap)))
