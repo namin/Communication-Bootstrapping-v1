@@ -1,6 +1,6 @@
 # Communication Bootstrapping v1.0
 
-(An exercise in software archaelogy.)
+(An exercise in software archaeology.)
 
 This is a modernized transcription of the code from the appendix of
 [Jake Beal](http://jakebeal.com/)'s
@@ -12,3 +12,5 @@ Runs in [Chez Scheme](https://cisco.github.io/ChezScheme/):
 (load "main.scm")
 (test)
 ```
+
+Warning: the code does not work (yet), as there is not a single success after training. :(
