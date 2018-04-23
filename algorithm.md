@@ -120,8 +120,8 @@ pages 18 to 21 of Beal's master thesis
 
 - `listen_out`(`F`)
    - Preconditions:
-     - F = f
-     - listening = true
+     - `F` = `f`
+     - `listening` = `true`
    - Effect:
-     - listening := false
-     - f := empty set
+     - `listening` := `false`
+     - `f` := empty set
