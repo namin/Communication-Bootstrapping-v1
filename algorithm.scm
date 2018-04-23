@@ -196,7 +196,7 @@
                       (num1s (length (list-transform-positive ll
                                        (lambda (x)
                                          (eq? 1 (test-line comm-lines x)))))))
-                 (if (and ll
+                 (if (and (yes? ll)
                           (>= (/ (length fll) (length ll)) percent-match)
                           (< 0 (+ num1s num-1s)))
                      (let loop ((inflections

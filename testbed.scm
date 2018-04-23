@@ -84,10 +84,10 @@
          (whofirst (if (and (yes? (second tres1)) (yes? (second tres2)))
                        (if (eq? (random 2) 0) #t #f)
                        (if (yes? (second tres1)) #t #f)))
-         (lres1 (listen whofirst (if whofirst comms (second tres2))
+         (lres1 (listen whofirst (if (yes? whofirst) comms (second tres2))
                         (get-feat1 state) (first tres1)
                         (get-imap1 state) (second tres1)))
-         (lres2 (listen (not whofirst) (if whofirst (second tres1) comms)
+         (lres2 (listen (not whofirst) (if (yes? whofirst) (second tres1) comms)
                         (get-feat2 state) (first tres2)
                         (get-imap2 state) (second tres2)))
          (newstate (list (second lres1) (first lres1) comms
