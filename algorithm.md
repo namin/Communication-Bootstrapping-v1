@@ -60,9 +60,9 @@ pages 18 to 21 of Beal's master thesis
      - `talking` := `true`
      - for all (`s`,`i`) in `F`
        - if not exists `x` in `T_s` s.t. `x_s` = `s`
-         - `T_s := `T_s` U (`i`,`random`)
+         - `T_s` := `T_s` U (`i`,`random`)
        - if not exists `y` in `T_i` s.t. `y_i` = `i`
-         - `T_i := `T_i` U (`i`,`random`)
+         - `T_i` := `T_i` U (`i`,`random`)
        - let
          - `x` in `T_s` s.t. `x_s` = `s`
          - `y` in `T_i` s.t. `y_i` = `i`
