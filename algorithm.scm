@@ -277,7 +277,7 @@
         (let ((res (list-search-positive (cdr m)
                      (lambda (x) (< (abs (- (second x) (second (first m))))
                                (* 2 unary-percent-match))))))
-          (if res
+          (if (yes? res)
               (loop (cdr m))
               (consp (car m) (loop (cdr m)))))
         #f)))
