@@ -1,6 +1,6 @@
 # Communication Bootstrapping v1.0
 
-(An exercise in software archaelogy.)
+(An exercise in software archaeology.)
 
 This is a modernized transcription of the code from the appendix of
 [Jake Beal](http://jakebeal.com/)'s
