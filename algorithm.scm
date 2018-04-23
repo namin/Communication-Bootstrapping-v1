@@ -88,7 +88,7 @@
          (smap-check (first res))
          (res2 (split stimfeat
                       (lambda (x)
-                        (or spokefirst
+                        (or (yes? spokefirst)
                             (< 0 (find-symbol-certainty internal-map (first x)))))))
          (newfeat (second res2))
          (c-a (list-transform-negative comm-lines
