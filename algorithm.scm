@@ -285,21 +285,21 @@
 ;; returns the comm-codes of a symbol in an internal representation
 ;; only return the *certain* codes
 (define (find-symbol-codes imap symbol)
-  (let* ((smap (if imap (second imap) #f))
+  (let* ((smap (if (yes? imap) (second imap) #f))
          (elt (list-search-positive smap (lambda (x) (eq? (first x) symbol)))))
-    (if elt (second elt) #f)))
+    (if (yes? elt) (second elt) #f)))
 
 ;; returns list of *uncertain* codes
 (define (find-symbol-uncertains imap symbol)
-  (let* ((smap (if imap (second imap) #f))
+  (let* ((smap (if (yes? imap) (second imap) #f))
          (elt (list-search-positive smap (lambda (x) (eq? (first x) symbol)))))
-    (if elt (third elt) #f)))
+    (if (yes? elt) (third elt) #f)))
 
 ;; returns the certainty value
 (define (find-symbol-certainty imap symbol)
-  (let* ((smap (if imap (second imap) #f))
+  (let* ((smap (if (yes? imap) (second imap) #f))
          (elt (list-search-positive smap (lambda (x) (eq? (first x) symbol)))))
-    (if elt (fourth elt) #f)))
+    (if (yes? elt) (fourth elt) #f)))
 
 ;; returns the unary code for a given inflection
 (define (find-inflection-code imap inflection)
