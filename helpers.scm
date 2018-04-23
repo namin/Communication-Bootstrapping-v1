@@ -32,22 +32,12 @@
          (p (random-range n)))
     (map (lambda (i) (list-ref xs i)) p)))
 
-;; TODO: do something more efficient!
-(define (to-string xs)
-  (apply
-   string-append
-   (map
-    (lambda (x) (string-append " "
-                          (cond ((no? x) "nil")
-                                ((number? x) (number->string x))
-                                (else (symbol->string x))))) xs)))
-(define (less-than? xs ys)
-  (string<? (to-string xs) (to-string ys)))
-
 (define (->uniset xs)
   (if (null? xs)
       '()
       (cons (car xs) (->uniset (remove (car xs) (cdr xs))))))
 
+(define (contained-set? a b r)
+  (not (find (lambda (x) (not (find (lambda (y) (r x y)) b))) a)))
 (define (equal-set? a b r)
-  (r (->uniset (sort less-than? a)) (->uniset (sort less-than? b))))
+  (contained-set? a b r)) ;; TODO: should also check the other direction?

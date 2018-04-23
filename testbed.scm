@@ -143,7 +143,7 @@
           (run-cycles newstate (+ i 1) terminate)))))
 
 (define (train)
-  (run-cycles '(#f #f #f #f #f) 1 1000) ;; 1000, 300
+  (run-cycles '(#f #f #f #f #f) 1 300) ;; 1000, 300
 )
 ;; test a percent-correct measure
 (define (test cyclestate)
