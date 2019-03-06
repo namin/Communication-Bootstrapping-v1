@@ -2,14 +2,12 @@ nouns = "bob jim mary icepick shovel table lab".split()
 verbs = "move approach retreat touch eat fear".split()
 roles = "subject object instrument place".split()
 
-# nouns =
-# """bob jim mary icepick shovel table lab fred bill classroom
+# nouns = """bob jim mary icepick shovel table lab fred bill classroom
 # leg cup butterfly dog cat turtle door window car hammer
 # keyboard coffee danish pencil pen eraser wall socket book ed
 # wheel chainsaw gun kite bedroom shower beach shoe light dark
 # hat office house apple banana flea vampire stapler kim joe""".split()
-# verbs =
-# """move approach retreat touch eat fear zap feel fly throw
+# verbs = """move approach retreat touch eat fear zap feel fly throw
 # catch push hit stab tickle hurt love hate want ignite""".split()
 
 total_nouns = len(nouns)
