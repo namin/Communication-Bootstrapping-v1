@@ -3,9 +3,9 @@
 ;; (  (line 1/-1/X) )
 ;; NOTE: Right now, all asserted feature lines are assumed to be positive.
 
-(define num-wires 1000) ;; 1000, 10000
-(define num-wires-per-symbol 20) ;; 20, 100
-(define min-wires-per-symbol 5) ;; 5, 20
+(define num-wires 10000) ;; 1000, 10000
+(define num-wires-per-symbol 100) ;; 20, 100
+(define min-wires-per-symbol 20) ;; 5, 20
 (define percent-match 0.8)
 (define unary-percent-match 0.05)
 
