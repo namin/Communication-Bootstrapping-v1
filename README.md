@@ -15,3 +15,4 @@ Runs in [Chez Scheme](https://cisco.github.io/ChezScheme/):
 (test (train))
 ```
 
+The python script, ran as `python ml_bootcomm.py`, re-creates the problem and solution delegating the learning to multi-layer perceptrons using pytorch. Communication is plugging in the encoder and decoder of two distinct autoencoders. The encoding of the sentence is a multi-hot encoding of the phrase parts, but in the spirit of the problem here, the encoding is dynamically set as the phrase parts are discovered.
