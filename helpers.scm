@@ -40,4 +40,5 @@
 (define (contained-set? a b r)
   (not (find (lambda (x) (not (find (lambda (y) (r x y)) b))) a)))
 (define (equal-set? a b r)
-  (contained-set? a b r)) ;; TODO: should also check the other direction?
+  (and (contained-set? a b r)
+       (contained-set? b a r)))
