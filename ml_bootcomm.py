@@ -54,6 +54,11 @@ def encode_sentence(m, s):
 def init_map():
   return [None for i in range(input_size)]
 
+import torch
+import torch.nn as nn
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 class AutoEncoder(nn.Module):
   def __init__(self, input_size, num_classes):
     super(AutoEncoder, self).__init__()
@@ -64,8 +69,8 @@ class AutoEncoder(nn.Module):
       nn.Linear(num_classes, input_size),
       nn.Sigmoid())
     self.m = init_map()
-    self.m_in = m
-    self.m_out = m
+    self.m_in = self.m
+    self.m_out = self.m
 
   def forward(self, x):
     x = self.encoder(x)
@@ -85,12 +90,12 @@ class Comm(nn.Module):
     x = self.decoder(x)
     return x
 
-autoencoder1 = AutoEncoder(input_size, num_classes)
-autoencoder2 = AutoEncoder(input_size, num_classes)
-comm12 = Comm(autoencoder1, autoencoder2)
-comm21 = Comm(autoencoder2, autoencoder1)
+autoencoder1 = AutoEncoder(input_size, num_classes).to(device)
+autoencoder2 = AutoEncoder(input_size, num_classes).to(device)
+comm12 = Comm(autoencoder1, autoencoder2).to(device)
+comm21 = Comm(autoencoder2, autoencoder1).to(device)
 
-criterion = nn.MSELoss()
+criterion = nn.MSELoss().to(device)
 optimizer11 = torch.optim.Adam(autoencoder1.parameters(), lr=learning_rate)
 optimizer22 = torch.optim.Adam(autoencoder2.parameters(), lr=learning_rate)
 optimizer12 = torch.optim.Adam(comm12.parameters(), lr=learning_rate)
@@ -98,9 +103,9 @@ optimizer21 = torch.optim.Adam(comm21.parameters(), lr=learning_rate)
 
 def opt(features, comm, optimizer):
   optimizer.zero_grad()
-  input = encode_sentence(comm.m_in, features)
+  input = encode_sentence(comm.m_in, features).to(device)
   output = comm(input)
-  target = encode_sentence(comm.m_out, features)
+  target = encode_sentence(comm.m_out, features).to(device)
   loss = criterion(target, output)
   loss.backward()
   optimizer.step()
