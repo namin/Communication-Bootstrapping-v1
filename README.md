@@ -13,4 +13,3 @@ Runs in [Chez Scheme](https://cisco.github.io/ChezScheme/):
 (test (train))
 ```
 
-Warning: the code does not work (yet), as there is not a single success after training. :(
