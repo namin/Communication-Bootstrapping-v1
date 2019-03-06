@@ -199,10 +199,8 @@
                  (if (and (yes? ll)
                           (>= (/ (length fll) (length ll)) percent-match))
                      (let loop ((inflections
-                                 (if (< 0 (+ num1s num-1s))
-                                     (unary-match (/ num1s (+ num1s num-1s))
-                                                  nmap)
-                                     #f))
+                                 (unary-match (/ num1s (+ num1s num-1s))
+                                              nmap))
                                 (f features))
                        (if (yes? inflections)
                            (loop (cdr inflections)
