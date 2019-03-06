@@ -22,7 +22,7 @@
 (define (fifth a)  (and (yes? a) (fourth (cdr a))))
 
 (define (list-transform-negative xs f)
-  (and xs (remove f xs)))
+  (and xs (filter (lambda (xs) (not (f xs))) xs)))
 
 (define (list-transform-positive xs f)
   (and xs (filter f xs)))
