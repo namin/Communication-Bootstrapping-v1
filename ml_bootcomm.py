@@ -128,10 +128,10 @@ def test1(net=None):
     comm = net
     if net is None:
       comm = comm12 if random.randint(0, 1)==0 else comm21
-    input = encode_sentence(comm.m_in, features)
+    input = encode_sentence(comm.m_in, features).to(device)
     output = comm(input)
     sample = torch.distributions.Binomial(probs=output).sample()
-    target = encode_sentence(comm.m_out, features)
+    target = encode_sentence(comm.m_out, features).to(device)
     loss = sum(abs(sample-target))
     if 0 <= loss and loss < 1:
       correct += 1
